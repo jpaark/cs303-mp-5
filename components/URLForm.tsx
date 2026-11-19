@@ -63,6 +63,7 @@ export default function URLForm() {
             <div className="w-full flex justify-center">
                 <Button
                     type="submit"
+                    variant="contained"
                 >
                     Shorten
                 </Button>
