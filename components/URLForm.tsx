@@ -55,20 +55,14 @@ export default function URLForm() {
                     id="alias"
                     variant="outlined"
                     size="small"
-                    placeholder="alias"
                     value={alias}
                     onChange={(e) => setAlias(e.target.value)}
                 />
             </div>
 
-            <FormHelperText>Choose a short name for your link.</FormHelperText>
-
             <div className="w-full flex justify-center">
                 <Button
-                    sx={{ width: "80px" }}
-                    variant="contained"
                     type="submit"
-                    disabled={url.trim() === "" || alias.trim() === ""}
                 >
                     Shorten
                 </Button>

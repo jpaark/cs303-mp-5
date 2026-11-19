@@ -5,7 +5,7 @@ import { URLProps } from "@/types";
 export default async function createURL(
     alias: string,
     url: string,
-): Promise<URLProps> {
+): Promise<URLProps | string> {
     console.log("creating new URL");
 
     const u = {
@@ -17,7 +17,7 @@ export default async function createURL(
     const existingURL = await urlsCollection.findOne({ alias: alias });
 
     if (existingURL) {
-        throw new Error("This alias is already taken");
+        return "This alias is already taken.";
     }
 
     const res = await urlsCollection.insertOne({ ...u });
